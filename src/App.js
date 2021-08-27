@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import { Switch, Route } from "react-router-dom";
-import * as BooksAPI from "./utils/BooksAPI";
+import * as BooksAPI from "./BooksAPI";
 import "./App.css";
 import BooksList from "./components/BooksList";
 import SearchBooks from "./components/SearchBooks";
@@ -8,7 +8,7 @@ import SearchBooks from "./components/SearchBooks";
 class BooksApp extends Component {
   state = {
     myBooks: [],
-    error: "You have no books in this shelf",
+    errorMessage: "You don't have any books in this shelf",
     fetchingError: undefined,
     isFetchingBooks: true
   };
@@ -50,7 +50,7 @@ class BooksApp extends Component {
     BooksAPI.update(book, shelf);
   };
   render() {
-    const { myBooks, error, fetchingError, isFetchingBooks } = this.state;
+    const { myBooks, errorMessage, fetchingError, isFetchingBooks } = this.state;
     const { changeBookShelf, fetchMyBooks } = this;
     return (
       <div className="app">
@@ -63,7 +63,7 @@ class BooksApp extends Component {
                 fetchingError={fetchingError}
                 myBooks={myBooks}
                 changeBookShelf={changeBookShelf}
-                error={error}
+                error={errorMessage}
                 fetchMyBooks={fetchMyBooks}
                 isFetchingBooks={isFetchingBooks}
               />
