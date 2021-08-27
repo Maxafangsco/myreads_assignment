@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import { Switch, Route } from "react-router-dom";
 import * as BooksAPI from "./BooksAPI";
 import "./App.css";
-import BooksList from "./components/BooksList";
+import HomeList from "./components/HomeList";
 import SearchBooks from "./components/SearchBooks";
 
 class BooksApp extends Component {
@@ -59,7 +59,7 @@ class BooksApp extends Component {
             exact
             path="/"
             render={() => (
-              <BooksList
+              <HomeList
                 fetchingError={fetchingError}
                 myBooks={myBooks}
                 changeBookShelf={changeBookShelf}

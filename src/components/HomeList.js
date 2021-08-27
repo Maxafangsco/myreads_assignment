@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import BooksShelf from "./BooksShelf";
 
-const BooksList = ({
+const HomeList = ({
   myBooks,
   changeBookShelf,
   error,
@@ -65,11 +65,11 @@ const BooksList = ({
   );
 };
 
-BooksList.propTypes = {
+HomeList.propTypes = {
   myBooks: PropTypes.array.isRequired,
   changeBookShelf: PropTypes.func.isRequired,
   error: PropTypes.string,
   fetchingError: PropTypes.string
 };
 
-export default BooksList;
+export default HomeList;
